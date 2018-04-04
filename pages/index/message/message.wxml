@@ -1,0 +1,36 @@
+<view class="ms_head">
+	<view class="msh_tabs">
+		<view class="msh_tab">消息</view>
+		<view class="msh_tab">提示</view>
+	</view>
+</view>
+<view class="ms_body">
+	<!-- 消息 -->
+	<view class="ms_con">
+		<view class="msc_tabs">
+			<view class="msc_tab">历史对话</view>
+			<view class="msc_tab">系统消息</view>
+		</view>
+		<view class="msc_npcList">
+			{{npcList.length}}
+			<view class="msc_npcitem">
+				<view class="mscni_tx"><image src="{{appconfig.resHost}}/img/tx.png"></image></view>
+				<view class="mscni_tx"><image src="{{appconfig.resHost}}/img/tx.png"></image></view>
+				<view class="mscni_tx"><image src="{{appconfig.resHost}}/img/tx.png"></image></view>
+			</view>
+		</view>
+		<view class="mscd_con">
+			<view class="mscdc_item">
+				<text>开发机楼上的房间爱卢卡斯大家发速度快解放了受打击了</text>
+			</view>
+		</view>
+	</view>
+	<!-- 提示 -->
+	<view class="ms_con">
+		<view class="msc_list">
+			<view class="msc_item">
+				<image src="{{appconfig.resHost}}/img/mail-weichakan-icon@3x.png" class="msci_img"></image><text class="msci_title">撒旦法开始交罚款了设计费阿里</text>
+			</view>
+		</view>
+	</view>
+</view>

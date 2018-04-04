@@ -1,0 +1,6 @@
+<view wx:for="{{patterns}}" wx:key="*this" class="pattern {{item.patternId==selectPatternId?'active':''}}" bindtap='selectPattern' data-selectPatternId='{{item.patternId}}'>{{item.patternId}}:{{item.name}}</view>
+<view>选择支付方式</view>
+342123 微信
+<view>
+  <button bindtap='applyPay'>支付</button>
+</view>

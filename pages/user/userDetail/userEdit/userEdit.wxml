@@ -1,0 +1,9 @@
+<view wx:if="{{edit=='nickname'}}">
+设置名字 <input></input>
+</view>
+<view wx:if="{{edit=='avatar'}}">
+设置头像 
+  <image src="{{userDetail.avatar}}"></image>
+</view>
+
+<button bindtap='submitEdit'>确认</button>

@@ -1,0 +1,24 @@
+<view class='wrap'>
+  <view class="section">
+    <!-- <view class="section__title">手机</view> -->
+    <input data-name="formData.phone" value="{{formData.phone}}" bindinput="bindinputval"  placeholder="输入手机号"  type="number"/>
+  </view>
+  <view class="section">
+    <!-- <view class="section__title">密码</view> -->
+    <input data-name="formData.password"  bindinput="bindinputval"  value="{{formData.password}}" placeholder="输入6~12位密码"  type="text"/>
+  </view>
+  
+
+  
+  <view class="btn-area">
+    <button bindtap='phoneLogin'>登录</button>
+  </view>
+  <view class='register-password'>
+      <navigator url="/pages/user/password/password?title=navigate"hover-class="navigator-hover">忘记密码</navigator>
+  <navigator url="/pages/user/register/register?title=navigate" hover-class="navigator-hover">注册</navigator>
+  </view>
+
+  <view bindtap='thirdpartLogin'  data-thirdpart="WeChat">使用微信登录</view>
+
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">getPhoneNumber </button>
+</view>

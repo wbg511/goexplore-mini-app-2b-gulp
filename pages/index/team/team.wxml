@@ -1,0 +1,24 @@
+<!--pages/index/team/team.wxml-->
+<!-- 搜索  -->
+ <view class='search-team'>
+  <view class='search-content clearfloat'>
+    <view class='team-icon floatL'></view>
+    <input class='floatL' placeholder='请输入战队ID'></input>
+    <view class='floatR searchIcon'>
+      <image src="../../../img/sousuo-icon@3x.png"></image>
+    </view>
+  </view>
+  
+</view> 
+<!-- 战队列表  -->
+<view class='myteam-list'>
+  <view class='myteam-item clearfloat'>
+    <view class='team-icon'>
+      <image src='http://p3ga3r6fb.bkt.clouddn.com/img/map-huodongliebiao-icon@3x.png'></image>
+    </view>
+    <view class='team-name'>逗比敢死队</view>
+    <view class='team-num'>24/100</view>
+    <view class=''></view>
+  </view>
+</view>
+

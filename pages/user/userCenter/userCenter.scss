@@ -1,0 +1,55 @@
+.userCenter {
+    background-color: #eee;
+    overflow: scroll;
+    .uc_head {
+        width: 750rpx;
+        height: 400rpx;
+        .uch_avatar {
+            margin-top: 100rpx;
+            border-radius: 50%;
+            margin: 0 auto;
+            width: 160rpx;
+            height: 160rpx;
+            margin-left: 50%;
+            margin-top: 50rpx;
+            transform: translate(-50%);
+        }
+        .uch_msg {
+            margin-top: 18rpx;
+            text-align: center;
+            color: #fff;
+            font-size: 34rpx;
+            .uch_name {}
+            .uch_link {
+                display: inline-block;
+            }
+        }
+    }
+    .uc_gns {
+        margin-top: -70rpx;
+        .gn {
+            width: 700rpx;
+            margin: 0 auto;
+            background-color: #fff;
+            height: 100rpx;
+            margin-top: 20rpx;
+            /*padding: 20rpx;*/
+            image {
+                margin-left: 30rpx;
+                margin-top: 30rpx;
+                width: 40rpx;
+                height: 40rpx;
+                float: left;
+            }
+            view {
+                margin-left: 30rpx;
+                height: 40rpx;
+                line-height: 40rpx;
+                margin-top: 30rpx;
+                float: left;
+                margin-left: 20rpx;
+                font-size: 34rpx;
+            }
+        }
+    }
+}

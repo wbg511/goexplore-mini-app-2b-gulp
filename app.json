@@ -1,0 +1,30 @@
+{
+  "pages": [
+       "pages/index/team/detail/detail",
+    "pages/index/index",
+    "pages/index/team/team",
+    "pages/index/team/search/search",
+    
+    "pages/index/message/message",
+    "pages/user/userDetail/userDetail",
+    "pages/user/myExplore/myExplore",
+    "pages/activity/activity",
+    "pages/activity/activityDetail/activityDetail",
+    "pages/user/login/login",
+    "pages/user/register/register",
+    "pages/logs/logs",
+    "pages/user/userCenter/userCenter",
+    "pages/user/medal/medal",
+    "pages/user/password/password",
+    "pages/user/bindPhone/bindPhone",
+    "pages/activity/activityApply/activityApply",
+    "pages/user/myExplore/myExploreDetail/myExploreDetail",
+    "pages/user/userDetail/userEdit/userEdit"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#F9F9F9",
+    "navigationBarTitleText": "趣探索",
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "black"
+  }
+}

@@ -1,0 +1,43 @@
+/* pages/index/team/team.wxss */
+/* myteam  */
+.myteam-list,.search-team{
+  height: 100rpx;
+  padding: 10rpx 40rpx;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.myteam-item,.search-content{
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+  
+}
+.search-content{
+  border-bottom: 1rpx solid #04989e;
+}
+.myteam-item view{
+  float: left;
+}
+.team-name{
+  margin-left: 40rpx;
+}
+.team-icon{
+  width: 80rpx;
+  height: 80rpx;
+}
+.team-num{
+  margin-left: 100rpx;
+}
+.search-content input{
+  width: 70%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  color: #999999
+}
+.searchIcon{
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 20rpx;
+}

@@ -1,0 +1,43 @@
+/* pages/common/register/register.wxss */
+.wrap{
+  padding: 0rpx 25rpx;
+}
+.section input{
+  height: 100rpx;
+  font-size: 28rpx;
+  color: #666;
+  background: #efeff4;
+  line-height: 100rpx;
+  padding-left: 25rpx;
+  border-radius: 10rpx;
+  margin-top: 30rpx;
+}
+.phone_content input{
+  margin-top: 66rpx;
+}
+.code_content{
+  position: relative;
+}
+.code_content button{
+  position: absolute;
+  right: 0;
+  top: 0rpx;
+  width: 200rpx;
+  height: 100rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background: #000;
+  border-radius: 10rpx;
+  line-height: 100rpx;
+  z-index: 2;
+}
+.btn-area button{
+  margin-top: 50rpx;
+    height: 100rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background: #000;
+  border-radius: 10rpx;
+  line-height: 100rpx;
+
+}

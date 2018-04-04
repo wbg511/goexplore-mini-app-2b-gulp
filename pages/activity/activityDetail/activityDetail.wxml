@@ -1,0 +1,11 @@
+<view>
+      <image class="img" style='width:750rpx;height:400rpx;' src='http://p3ga3r6fb.bkt.clouddn.com/demoactivity.png'></image>
+      <text class="name">{{activity.name}}</text>
+      <text class="price">￥{{activity.price}}</text>
+      <view class="summary">{{activity.summary}}</view>
+      <view>
+        <text class="tags">{{activity.district}}/{{activity.category}}</text>
+        <text class="time">{{activity.starting}}-{{activity.ending}}</text>
+      </view>
+      <button  bindtap='goActivityApply'>立即报名</button>
+</view>

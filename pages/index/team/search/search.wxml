@@ -1,0 +1,13 @@
+<!--pages/index/team/team.wxml-->
+<!-- 搜索  -->
+ <view class='search-team'>
+  <view class='search-content clearfloat'>
+    <view class='team-icon floatL'></view>
+    <input class='floatL' placeholder='请输入战队ID'></input>
+    <view class='floatR searchIcon'>
+      <image src="../../../../img/sousuo-icon@3x.png"></image>
+    </view>
+  </view>
+  
+</view> 
+

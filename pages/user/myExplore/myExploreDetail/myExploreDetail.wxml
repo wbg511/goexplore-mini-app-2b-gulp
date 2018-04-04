@@ -1,0 +1,26 @@
+<image class="img" style='width:750rpx;height:400rpx;' src='http://p3ga3r6fb.bkt.clouddn.com/demoactivity.png'></image>
+<text class="name">{{myExplore.exName}}</text>
+<text class="name">{{myExplore.orderNo}}</text>
+<view class="summary">{{myExplore.exSummary}}</view>
+<view class="summary">{{myExplore.status}}</view>
+<view>
+    <text class="tags">{{myExplore.patternId}}:{{myExplore.patternName}}</text>
+    <text class="time">{{myExplore.starting}}-{{myExplore.ending}}</text>
+</view>
+报名费用：
+<text class="price">￥{{myExplore.price}}</text>
+<text wx:if="myExplore.status==1">等待支付</text>
+<text wx:if="myExplore.status==4">体验中</text>
+<text wx:if="myExplore.status==5">已完成</text>
+<button wx:if="myExplore.status==1">立即支付</button>
+
+二维码
+<image src=""></image>
+
+<view wx:if="myExplore.status==4">成员
+    <view wx:for="{{exploreMembers}}" wx:key="*this">1.
+        <image src="{{item.avatar}}"></image> {{item.userId}} {{item.nickname}}1:20'30''</view>
+</view>
+<view wx:if="myExplore.status==5">冒险排名
+    <view wx:for="{{exploreMembers}}" wx:key="*this">1.鲁班大师 1:20'30''</view>
+</view>

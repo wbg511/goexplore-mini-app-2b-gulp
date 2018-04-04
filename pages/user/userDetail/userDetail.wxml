@@ -1,0 +1,12 @@
+<view bindtap='userEdit' data-edit="avatar">
+  头像 <image src="{{userDetail.avatar}}"></image>
+</view>
+<view bindtap='userEdit' data-edit="nickname">
+  昵称 {{userDetail.nickname}}
+</view>
+<view bindtap='userEdit' data-edit="password">
+  密码 {{userDetail.password}}
+</view>
+id：{{userDetail.id}} 
+
+手机号：{{userDetail.phone}}

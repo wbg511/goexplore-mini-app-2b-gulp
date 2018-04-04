@@ -1,0 +1,41 @@
+.ms_head {
+    .msh_tabs {
+        .msh_tab {}
+        .msh_tab {}
+    }
+}
+
+.ms_body {
+    // <!-- 消息 -->
+    .ms_con {
+        .msc_tabs {
+            .msc_tab {}
+            .msc_tab {}
+        }
+        .msc_npcList {
+            .msc_npcitem {
+                .mscni_tx {
+                    image {
+                    	width: 60rpx;
+                    	height: 60rpx;
+                    }
+                }
+            }
+        }
+        .mscd_con {
+            .mscdc_item {
+                text {}
+            }
+        }
+    } // <!-- 提示 -->
+    .ms_con {
+        .msc_list {
+            .msc_item {
+                .msci_img {  	width: 40rpx;
+                    	height: 40rpx;
+                   }
+                .msci_title {}
+            }
+        }
+    }
+}

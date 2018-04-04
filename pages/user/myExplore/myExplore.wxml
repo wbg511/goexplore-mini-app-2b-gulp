@@ -1,0 +1,31 @@
+<view class="myExplore">
+  <view class="tabs">
+    <view class="tabs_ls">
+      <scroll-view class="tab_lssv" scroll-x>
+        <view class="tablss">
+          <view wx:for="{{tabs}}" wx:key="*this" class="item {{item.stauts==curTab?'active':''}}" bindtap="selectTab" data-tab="{{item.stauts}}">{{item.name}}</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!--活动列表  -->
+  <view class="activities">
+    <view wx:for="{{activities}}" wx:key="*this" bindtap='goMyexploreDetail' data-myexploreId="{{item.orderNo}}" class="ala">
+      <image class="img" style='width:750rpx;height:400rpx;' src='http://p3ga3r6fb.bkt.clouddn.com/demoactivity.png'></image>
+      <text class="name">{{item.exName}}</text>
+      <text class="name">{{item.orderNo}}</text>
+      <text class="price">￥{{item.price}}</text>
+      <view class="summary">{{item.exSummary}}</view>
+      <view class="summary">{{item.status}}</view>
+      <view>
+        <text class="tags">{{item.patternId}}:{{item.patternName}}</text>
+        <text class="time">{{item.starting}}-{{item.ending}}</text>
+      </view>
+    </view>
+  </view>
+  <!--加载更多  -->
+  <view class="weui-loadmore" show="{{isShowLoadMore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+</view>

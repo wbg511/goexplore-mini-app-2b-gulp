@@ -1,0 +1,67 @@
+<!--pages/index/team/detail/detail.wxml-->
+<!-- 战队详情  -->
+<view class='team-detail'>
+  <!-- 战队图标  -->
+  <view class='team-detail-icon'>
+    <view class='image-content'>
+      <image src=''></image>
+    </view>
+
+  </view>
+  <!-- 战队ID  -->
+  <view class='public-team'>
+    <view class='myteam-item clearfloat'>
+      <view class='team-title'>
+        战队ID:
+      </view>
+      <view class='team-id'>5489762</view>
+      <view class='team-num'>24/100</view>
+      <view class='team-code'></view>
+    </view>
+  </view>
+  <!-- 成员  -->
+  <view class='member'>
+    <view class='member-content clearfloat'>
+      <view class='floatL'>成员（8人）</view>
+      <view class='floatR'>确定</view>
+    </view>
+  </view>
+  <!-- 成员列表  -->
+  <view class='meber-list'>
+    <view class='item'>
+      <view class='meber-img'>
+        <image></image>
+      </view>
+      <view>一见清心</view>
+
+    </view>
+    <view class='item'>
+      <view class='meber-img'>
+        <image></image>
+      </view>
+      <view>一见清心</view>
+
+    </view>
+    <view class='item'>
+      <view class='meber-img'>
+        <image></image>
+      </view>
+      <view>一见清心</view>
+
+    </view>
+    <view class='item'>
+      <view class='meber-img'>
+        <image></image>
+      </view>
+      <view>一见清心</view>
+
+    </view>
+    <view class='item'>
+      <view class='meber-img'>
+        <image></image>
+      </view>
+      <view>一见清心</view>
+
+    </view>
+  </view>
+</view>

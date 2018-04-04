@@ -1,0 +1,36 @@
+<view class='userCenter' style="height:{{appconfig.windowHeight}}px">
+    <view class='uc_head' style="background-image: url('http://p3ga3r6fb.bkt.clouddn.com/img/demoactivity.png')">
+        <!-- <image bindtap="touserDetail" class='uch_avatar' src='{{appconfig.resHost}}/img/my_imge_weidenglu@3x.png'></image> -->
+        <image class='uch_avatar' src='{{userDetail!=null?userDetail.avatar:"{{appconfig.resHost}}/img/my_imge_weidenglu@3x.png"}}'></image>
+        <view class='uch_msg'>
+            <text class='uch_name' bindtap="touserDetail" wx:if="{{userDetail!=null}}">{{userDetail.nickname}}</text><text class='uch_link' url='/pages/user/login/login' hover-class='navigator-hover' wx:if="{{userDetail==null}}" bindtap="tologin">登陆/</text><text class='uch_link' url='/pages/user/register/register' hover-class='navigator-hover' bindtap="toregister" wx:if="{{userDetail==null}}">注册</text>
+        </view>
+    </view>
+    <view class='uc_gns'>
+<!--         <view class='gn' bindtap='toMyExplore'>
+            <image src='{{appconfig.resHost}}/img/my_icon_tansuo@3x.png'></image>
+            <view>我的探索</view>
+        </view> -->
+<!--         <view class='gn' bindtap='toMyMedal'>
+            <image src='{{appconfig.resHost}}/img/my_icon_xunzhang@3x.png'></image>
+            <view>我的勋章</view>
+        </view> -->
+        <view class='gn' bindtap='toUserDetail'>
+            <image src='{{appconfig.resHost}}/img/my_icon_zhanghao@3x.png'></image>
+            <view>我的账号</view>
+        </view>
+        <view class='gn' bindtap='toMyExplore'>
+            <image src='{{appconfig.resHost}}/img/my_icon_fenxiang@3x.png'></image>
+            <view>分享</view>
+        </view>
+        <view class='gn'>
+            <image src='{{appconfig.resHost}}/img/my_imge_weidenglu@3x.png'></image>
+            <view>意见反馈</view>
+        </view>
+        <view class='gn' bindtap='loginout'  wx:if="{{userDetail!=null}}">
+            <image src='{{appconfig.resHost}}/img/my_imge_weidenglu@3x.png'></image>
+            <view>退出登录</view>
+        </view>
+    </view>
+    <!-- <button open-type='launchApp' app-parameter='wechat' binderror='launchAppError'>打开APP</button> -->
+</view>

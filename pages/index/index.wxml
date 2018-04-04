@@ -1,0 +1,445 @@
+<view class="index">
+    <view class="fullpage mapview ">
+        <map id="map" longitude="102.708607" latitude="25.043926" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="bindmarkertap" polyline="{{polyline}}" scale="14" bindregionchange="regionchange" show-location="true" style="width: 100%; height: 100%;">
+            <!-- 剧情对话场景 -->
+            <cover-view class="story" hidden="{{storyHide}}">
+                <cover-view class="story_bg" style="background-image: url('{{appconfig.resHost}}/img/bg-02.png')">
+                    <cover-image src="{{appconfig.resHost}}/img/bg-02.png"></cover-image>
+                </cover-view>
+                <cover-view class="st_sound">
+                    <cover-image src="{{appconfig.resHost}}/img/tujian_yinxiao_icon@3x.png"></cover-image>
+                </cover-view>
+                <cover-view class="st_npc">
+                    <cover-image src="{{appconfig.resHost}}/img/renwu-01.png"></cover-image>
+                </cover-view>
+                <cover-view class="st_goods">
+                    <cover-image src="{{appconfig.resHost}}/img/xunzhang_icon_maoxian@3x.png"></cover-image>
+                </cover-view>
+                <!-- 普通对话 -->
+                <cover-view class="st_con st_conp none">
+                    <cover-view class="st_conpnr">
+                        <cover-view class="p">一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十123一二三四五六七八九十999999</cover-view>
+                    </cover-view>
+                </cover-view>
+                <!-- 带选项的对话 -->
+                <cover-view class="st_con st_conselect">
+                    <cover-view class="st_conselectnr">
+                        <cover-view class="p">阿斯顿发生地方撒的发生发送？</cover-view>
+                        <cover-view class="btn">a 是多看看</cover-view>
+                        <cover-view class="btn">b 耳光</cover-view>
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+            <!-- 顶部悬浮用户信息 -->
+            <cover-view class="fab idx_topuserbtns">
+                <cover-view class="tx" bindtap="goUserCenter">
+                    <cover-image class="tximg" wx:if="{{userDetail==''&&userInfo==''}}" src="{{appconfig.resHost}}/img/tx.png"></cover-image>
+                    <cover-image class="tximg" wx:if="{{userDetail==''&&userInfo!=''}}" src="{{userInfo.avatarUrl}}"></cover-image>
+                    <cover-image class="tximg" wx:if="{{userDetail!=''}}" src="{{userDetail.avatar}}"></cover-image>
+                </cover-view>
+                <cover-view class="zj">
+                    <cover-image src="{{appconfig.resHost}}/img/map-huodong-icon@3x.png"></cover-image>
+                    <!-- <cover-view class="zjsm"></cover-view> -->
+                </cover-view>
+                <cover-view class="xzs">
+                    <cover-view class="xz">
+                        <cover-image src="{{appconfig.resHost}}/img/xuanzhechufa-weixuanzhe-icon@3x.png"></cover-image>
+                    </cover-view>
+                    <cover-view class="xz">
+                        <cover-image src="{{appconfig.resHost}}/img/xuanzhechufa-weixuanzhe-icon@3x.png"></cover-image>
+                    </cover-view>
+                    <cover-view class="xz">
+                        <cover-image src="{{appconfig.resHost}}/img/xuanzhechufa-weixuanzhe-icon@3x.png"></cover-image>
+                    </cover-view>
+                </cover-view>
+                <cover-view class="showmore">
+                    <cover-image src="{{appconfig.resHost}}/img/map-arrow-icon@3x.png"></cover-image>
+                </cover-view>
+            </cover-view>
+            <!--右侧操作按钮  -->
+            <cover-view class="fab idx_rightbtns">
+                <cover-view class="idx_frbtn">
+                    <cover-image bindtap="toExploreMessagePage" src="{{appconfig.resHost}}/img/map-notice-icon@3x.png"></cover-image>
+                </cover-view>
+                <cover-view class="idx_frbtn">
+                    <cover-image bindtap="openPackage" src="{{appconfig.resHost}}/img/map-knapsack-icon@3x.png"></cover-image>
+                </cover-view>
+                <cover-view class="idx_frbtn">
+                    <cover-image bindtap="openScanCode" src="{{appconfig.resHost}}/img/maap-scan-icon@3x.png"></cover-image>
+                </cover-view>
+                <cover-view class="idx_frbtn">
+                    <cover-image bindtap="toExploreTeamPage" src="{{appconfig.resHost}}/img/map-team-icon@3x.png"></cover-image>
+                </cover-view>
+            </cover-view>
+            <!--左下操作按钮  -->
+            <cover-view class="fab idx_lbbtns">
+                <cover-view class="idx_lbbtn">
+                    <cover-image src="{{appconfig.resHost}}/img/map-location-icon@3x.png"></cover-image>
+                </cover-view>
+                <cover-view class="idx_lbbtn">
+                    <cover-image src="{{appconfig.resHost}}/img/map-renovate-icon@3x.png"></cover-image>
+                </cover-view>
+            </cover-view>
+            <!--右下操作按钮  -->
+            <cover-view class="fab idx_rbbtns none">
+                <cover-view class="idx_rbbtn">
+                    <cover-image bindtap="goAcitvitylist" src="{{appconfig.resHost}}/img/map-huodongliebiao-icon@3x.png"></cover-image>
+                </cover-view>
+            </cover-view>
+            <!--右下操作按钮  -->
+            <cover-view class="fab idx_rbbtntrigger">
+                <cover-view class="idx_rbbtn">
+                    <cover-image bindtap="goonTrigger" src="{{appconfig.resHost}}/img/map-fanhui-icon@3x.png"></cover-image>
+                </cover-view>
+            </cover-view>
+            <!-- 触发器场景 -->
+            <!-- 触发器场景 -->
+            <!-- 触发器场景 -->
+            <cover-view class="trigger" hidden="{{triggerHide}}">
+                <!-- 顶部菜单区 -->
+                <cover-view class="head">
+                    <cover-view class="hd_ms">
+                        <cover-view class="hd_m">
+                            <cover-image bindtap="backMapFromTrigger" src="{{appconfig.resHost}}/img/triggeri-return-icon@3x.png" class="hdm_img"></cover-image>
+                        </cover-view>
+                        <cover-view class="hd_m">
+                            <cover-image bindtap="toExploreMessagePage" src="{{appconfig.resHost}}/img/triggeri-ontice-icon@3x.png" class="hdm_img"></cover-image>
+                        </cover-view>
+                        <cover-view class="hd_m">
+                            <cover-image bindtap="openPackage" src="{{appconfig.resHost}}/img/triggeri-knapsack-icon@3x.png" class="hdm_img"></cover-image>
+                        </cover-view>
+                        <cover-view class="hd_m">
+                            <cover-image bindtap="openScanCode" src="{{appconfig.resHost}}/img/trgger-scan-icon@3x.png" class="hdm_img"></cover-image>
+                        </cover-view>
+                        <cover-view class="hd_m">
+                            <cover-image bindtap="toExploreTeamPage" src="{{appconfig.resHost}}/img/trgger-team-icon@3x.png" class="hdm_img"></cover-image>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+                <!-- 触发区 -->
+                <cover-view class="t_body">
+                    <!-- 触发器： -->
+                    <cover-view class="tb_con trigger_xztk">
+                        <!-- 触发问题区 -->
+                        <cover-view class="tbc_que">
+                            <cover-view class="tbcq_pic">
+                                <cover-image class="pic" src="{{appconfig.resHost}}/img/demoactivity.png" alt=""></cover-image>
+                                <cover-view class="tbcq_tit">
+                                    那么请问。。。四谛法接收到了开发商的？
+                                </cover-view>
+                            </cover-view>
+                        </cover-view>
+                        <!-- 触发答题区 选字填空-->
+                        <cover-view class="tbc_ans">
+                            <cover-view class="tbca_con">
+                                <cover-view class="tbca_xztk">
+                                    <cover-view class="xztk_tz">
+                                        <cover-view class="list">
+                                            <cover-view class="item">是</cover-view>
+                                            <cover-view class="item">说</cover-view>
+                                            <cover-view class="item">说</cover-view>
+                                            <cover-view class="item">阿</cover-view>
+                                        </cover-view>
+                                    </cover-view>
+                                    <cover-view class="xztk_ops">
+                                        <cover-view class="ls">
+                                            <cover-view class="item">到</cover-view>
+                                            <cover-view class="item">到</cover-view>
+                                            <cover-view class="item">到</cover-view>
+                                            <cover-view class="item">到</cover-view>
+                                            <cover-view class="item">到</cover-view>
+                                            <cover-view class="item">到</cover-view>
+                                            <cover-view class="item">到</cover-view>
+                                            <cover-view class="item">到</cover-view>
+                                            <cover-view class="item">到</cover-view>
+                                            <cover-view class="item">到</cover-view>
+                                            <cover-view class="item">到</cover-view>
+                                            <cover-view class="item">到</cover-view>
+                                        </cover-view>
+                                    </cover-view>
+                                </cover-view>
+                            </cover-view>
+                        </cover-view>
+                    </cover-view>
+                    <!-- 触发器： -->
+                    <cover-view class="tb_con none">
+                        <!-- 触发问题区 -->
+                        <cover-view class="tbc_que">
+                        </cover-view>
+                        <!-- 触发答题区 -->
+                        <cover-view class="tbc_ans">
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+            <!-- 背包场景 -->
+            <!-- 背包场景 -->
+            <!-- 背包场景 -->
+            <cover-view class="model package" hidden="{{packageHide}}">
+                <cover-view class="modelbg pg_bg" bindtap="packageHide" data-is="true"></cover-view>
+                <cover-view class="pg_body" style="height: {{appcfg.windowHeight}}px;">
+                    <cover-view class="pgb_head">
+                        <cover-view class="pgbh_list">
+                            <cover-view wx:for="{{packageTabs}}" wx:key="*this" bindtap='changePackageTab' data-idx="{{index}}" class="pgbh_item {{item.active?'active':''}}">
+                                <cover-view class="pgbh_title">
+                                    {{item.name}}
+                                </cover-view>
+                            </cover-view>
+                        </cover-view>
+                    </cover-view>
+                    <cover-view class="pgb_con" style="height: {{appcfg.windowHeightRpx - 260}}rpx;">
+                        <!-- 道具 -->
+                        <cover-view class="pgbc pgbc_material" hidden="{{!packageTabs[0].active}}">
+                            <cover-view class="pgbc_cate">
+                            </cover-view>
+                            <cover-view class="pgbc_list" style="height: {{appcfg.windowHeightRpx - 260}}rpx;">
+                                <cover-view class="pgbc_item">
+                                    <cover-view class="pgbci_are">
+                                        <cover-image class="img" src="{{appconfig.resHost}}/img/mail-yichakan-icon@3x.png"></cover-image>
+                                        <cover-image class="pgbci_icon" src="{{appconfig.resHost}}/img/paiming@3x.png"></cover-image>
+                                        <cover-view class="pgbci_num">x1</cover-view>
+                                    </cover-view>
+                                </cover-view>
+                            </cover-view>
+                            <!-- 分页 -->
+                            <cover-view class="pgbc_page">
+                                <cover-view class="col">
+                                    <cover-image src=""></cover-image>
+                                </cover-view>
+                                <cover-view class="col">
+                                    <cover-view class="wz">
+                                        道具已获得
+                                    </cover-view>
+                                </cover-view>
+                                <cover-view class="col">
+                                    <cover-image src=""></cover-image>
+                                </cover-view>
+                            </cover-view>
+                        </cover-view>
+                        <!-- 图鉴 -->
+                        <cover-view class="pgbc pgbc_card" hidden="{{!packageTabs[1].active}}">
+                            <cover-view class="pgbc_list">
+                                <cover-view class="pgbc_item">
+                                    <cover-view class="pgbci_are">
+                                        <cover-image class="img" src="{{appconfig.resHost}}/img/mail-yichakan-icon@3x.png"></cover-image>
+                                        <cover-image class="pgbci_icon" src="{{appconfig.resHost}}/img/paiming@3x.png"></cover-image>
+                                        <cover-view class="pgbci_num">x2</cover-view>
+                                    </cover-view>
+                                </cover-view>
+                            </cover-view>
+                            <!-- 分页 -->
+                            <cover-view class="pgbc_page">
+                                <cover-view class="col">
+                                    <cover-image src=""></cover-image>
+                                </cover-view>
+                                <cover-view class="col">
+                                    <cover-view class="wz">
+                                        道具已获得
+                                    </cover-view>
+                                </cover-view>
+                                <cover-view class="col">
+                                    <cover-image src=""></cover-image>
+                                </cover-view>
+                            </cover-view>
+                        </cover-view>
+                        <!-- 通讯录 -->
+                        <cover-view class="pgbc pgbc_npc" hidden="{{!packageTabs[2].active}}">
+                            <cover-view class="pgbc_list">
+                                <cover-view class="pgbc_item">
+                                    <cover-view class="pgbci_are">
+                                        <cover-image class="img" src="{{appconfig.resHost}}/img/mail-yichakan-icon@3x.png"></cover-image>
+                                        <cover-image class="pgbci_icon" src="{{appconfig.resHost}}/img/paiming@3x.png"></cover-image>
+                                        <cover-view class="pgbci_num">x3</cover-view>
+                                    </cover-view>
+                                </cover-view>
+                            </cover-view>
+                            <!-- 分页 -->
+                            <cover-view class="pgbc_page">
+                                <cover-view class="col">
+                                    <cover-image src=""></cover-image>
+                                </cover-view>
+                                <cover-view class="col">
+                                    <cover-view class="wz">
+                                        道具已获得
+                                    </cover-view>
+                                </cover-view>
+                                <cover-view class="col">
+                                    <cover-image src=""></cover-image>
+                                </cover-view>
+                            </cover-view>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+            <!-- 背包内容详情 -->
+            <!-- 背包内容详情 -->
+            <!-- 背包内容详情 -->
+            <cover-view class="pg_detail none">
+                <cover-view class="gbd_bg"></cover-view>
+                <!-- 道具 -->
+                <cover-view class="pgd_prop">
+                    <cover-view class="pgdp_con">
+                        <cover-image class="pgdpc_icon" src=""></cover-image>
+                        <cover-view class="pgdpc_name">
+                            红宝石
+                        </cover-view>
+                        <cover-view class="pgdpc_subn">解密道具之一</cover-view>
+                        <cover-view class="pgdpc_number">数量：3</cover-view>
+                        <cover-view class="pgdpc_desc">阿斯蒂芬科技收到了开发局塑料袋咖啡机阿里sd卡房间施蒂利克</cover-view>
+                        <cover-view class="pgdpc_btn">使用</cover-view>
+                    </cover-view>
+                </cover-view>
+                <!-- 图鉴 -->
+                <cover-view class="pgd_card">
+                    <cover-view class="pgdc_con">
+                        <cover-view class="pgdcc_desc">
+                            <cover-view class="pgdccd_img">
+                                <cover-image src=""></cover-image>
+                            </cover-view>
+                            <cover-view class="pgdccd_nr">
+                                <cover-view class="pgdccd_nrt">
+                                    云南陆军讲武堂
+                                </cover-view>
+                                <cover-view class="pgdccd_nrt">
+                                    云南陆军讲武堂云南陆军讲云南陆军讲武堂云南陆军讲武堂云南陆军讲武堂云南陆军讲武堂武堂云南陆军讲武堂云南陆军讲武堂云南陆军讲武堂
+                                </cover-view>
+                            </cover-view>
+                            <cover-view class="pgdccd_zcars">
+                                <cover-view class="pgdccd_zcar">
+                                    <cover-image src=""></cover-image>
+                                    <cover-view class="pgdccd_zcarname">
+                                        图片已
+                                    </cover-view>
+                                </cover-view>
+                            </cover-view>
+                        </cover-view>
+                        <!-- 图鉴子内容详情 -->
+                        <cover-view class="pgdn_detail">
+                            <cover-view class="pgdnd_bg"></cover-view>
+                            <cover-view class="pgdnd_head">
+                                <cover-view class="pgdndh_back">
+                                    <cover-image src=""></cover-image>
+                                </cover-view>
+                                <cover-view class="pgdndh_sound">
+                                    <cover-image src=""></cover-image>
+                                </cover-view>
+                            </cover-view>
+                            <cover-view class="pgdnd_msg">
+                                <cover-view class="pgdnd_msgwz">阿斯顿发所发生的</cover-view>
+                            </cover-view>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+                <!-- 通讯录 -->
+                <cover-view class="pgd_npc">
+                    <cover-view class="pgdn_con">
+                        <cover-image class="pgdnc_icon" src=""></cover-image>
+                        <cover-view class="pgdnc_name">红宝石</cover-view>
+                        <cover-view class="pgdnc_subn">解密道具之一</cover-view>
+                        <cover-view class="pgdnc_number">数量：3</cover-view>
+                        <cover-view class="pgdnc_desc">阿斯蒂芬科技收到了开发局塑料袋咖啡机阿里sd卡房间施蒂利克</cover-view>
+                        <cover-view class="pgdnc_btn">使用</cover-view>
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+            <!-- 背包场景 end-->
+            <!-- 弹出框 -->
+            <!-- 弹出框 -->
+            <!-- 弹出框 -->
+            <cover-view hidden="{{alerttipHide}}" class="model none">
+                <cover-view class="modelbg"></cover-view>
+                <!-- 游戏开始提示 -->
+                <cover-view class="modelcon md_alerttip none">
+                    <cover-view class="mc_center">
+                        <cover-view class="mc_ce">
+                            <cover-image class="tipbgimg" src="{{appconfig.resHost}}/img/tanchuang@3x.png" mode="aspectFit"></cover-image>
+                            <cover-view class="mc_ccon">
+                                <cover-view class="tipword">【好朋友】,你好，欢迎你来参加黑天鹅探秘。,你好，欢迎你来参加黑天鹅探秘。,你好，欢迎你来参加黑天鹅探秘。,你好，欢迎你来参加黑天鹅探秘。</cover-view>
+                                <cover-view class="btntip">开始游戏</cover-view>
+                            </cover-view>
+                            <cover-view class="modelColse">
+                                <cover-image bindtap="alerttipHide" class="img" src="{{appconfig.resHost}}/img/luopan-Close-icon@3x.png"></cover-image>
+                            </cover-view>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+                <!-- 提示获得物品 -->
+                <cover-view class="modelcon md_getgoods none">
+                    <cover-view class="mdgg_ce">
+                        <cover-image class="goodsimg" src="{{appconfig.resHost}}/img/map-arrow-icon@3x.png" mode="aspectFit"></cover-image>
+                        <cover-view class="goodsdesc">开始游戏开始游戏开始游戏</cover-view>
+                        <cover-view class="modelColse">
+                            <cover-image bindtap="alerttipHide" class="img" src="{{appconfig.resHost}}/img/luopan-Close-icon@3x.png"></cover-image>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+                <!-- 探索系统提示 -->
+                <cover-view class="modelcon md_systips none">
+                    <cover-view class="mo_st_cebg">
+                        <cover-view class="mo_st_ccon">
+                            <cover-view class="mo_st_title">探索提示</cover-view>
+                            <cover-image class="mo_st_img" src="{{appconfig.resHost}}/img/xitongtongzhi-logozheng-icon@3x.png"></cover-image>
+                            <cover-view class="mo_st_desc">【好朋友】,你好，欢迎你来参加黑天鹅探秘。你好，欢迎你来参加黑天鹅探秘。你好，欢迎你来参加黑天鹅探秘。你好，欢迎你来参加黑天鹅探秘。你好，欢迎你来参加黑天鹅探秘。,你好，欢迎你来参加黑天鹅探秘。,你好，欢迎你来参加黑天鹅探秘。你好，欢迎你来参加黑天鹅探秘。你好，欢迎你来参加黑天鹅探秘。你好，欢迎你来参加黑天鹅探秘。,你好，欢迎你来参加黑天鹅探秘。</cover-view>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+                <!-- 探索系统提示 - 勋章 -->
+                <cover-view class="modelcon md_systips none">
+                    <cover-view class="mo_st_cebg">
+                        <cover-view class="mo_st_ccon">
+                            <cover-view class="mo_st_title">探索提示</cover-view>
+                            <cover-image class="mo_st_img" src="{{appconfig.resHost}}/img/xitongtongzhi-logozheng-icon@3x.png"></cover-image>
+                            <cover-view class="mo_st_desc">【好朋友】,你好，欢迎你来参加黑天鹅探秘。你好，欢迎你来参加黑天鹅探秘。你好，欢迎你来参加黑天鹅探秘。你好，欢迎你来参加黑天鹅探秘。你好，欢迎你来参加黑天鹅探秘。,你好，欢迎你来参加黑天鹅探秘。,你好，欢迎你来参加黑天鹅探秘。你好，欢迎你来参加黑天鹅探秘。你好，欢迎你来参加黑天鹅探秘。你好，欢迎你来参加黑天鹅探秘。,你好，欢迎你来参加黑天鹅探秘。</cover-view>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+                <!-- 游戏开始提示 -->
+                <cover-view class="modelcon alerttip none">
+                    <cover-view class="mc_center">
+                        <cover-view class="mc_ce">
+                            <cover-image class="tipbgimg" src="{{appconfig.resHost}}/img/tanchuang@3x.png" mode="aspectFit"></cover-image>
+                            <cover-view class="mc_ccon">
+                                <cover-view class="tipword">【好朋友】,你好，欢迎你来参加黑天鹅探秘。,你好，欢迎你来参加黑天鹅探秘。,你好，欢迎你来参加黑天鹅探秘。,你好，欢迎你来参加黑天鹅探秘。</cover-view>
+                                <cover-view class="btntip">开始游戏</cover-view>
+                            </cover-view>
+                            <cover-view class="modelColse">
+                                <cover-image bindtap="alerttipHide" class="img" src="{{appconfig.resHost}}/img/luopan-Close-icon@3x.png"></cover-image>
+                            </cover-view>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+                <!-- 提示完成游戏 -->
+                <cover-view class="modelcon  md_finishgame none">
+                    <cover-view class="mdfg_center">
+                        <cover-view class="mdfg_ce">
+                            <cover-image mode="aspectFit" class="tipbgimg" src="{{appconfig.resHost}}/img/tongguanchenggong@3x.png" mode="aspectFit"></cover-image>
+                            <cover-view class="mdfg_nr">
+                                <cover-view class="teamt">
+                                    昆明探秘小队
+                                </cover-view>
+                                <cover-view class="teamf">
+                                    分数：92
+                                </cover-view>
+                                <cover-view class="teams">
+                                    时间：02:50:20
+                                </cover-view>
+                            </cover-view>
+                            <cover-view class="mdfg_btns">
+                                <cover-view class="mdfg_btn">
+                                    <cover-view class="btn">确定</cover-view>
+                                </cover-view>
+                                <cover-view class="mdfg_btn">
+                                    <cover-view class="btn">分享</cover-view>
+                                </cover-view>
+                            </cover-view>
+                            <cover-view class="modelColse">
+                                <cover-image bindtap="alerttipHide" class="img" src="{{appconfig.resHost}}/img/luopan-Close-icon@3x.png"></cover-image>
+                            </cover-view>
+                        </cover-view>
+                    </cover-view>
+                </cover-view>
+            </cover-view>
+            <!-- model -->
+        </map>
+    </view>
+</view>
