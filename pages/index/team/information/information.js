@@ -1,4 +1,4 @@
-// pages/index/team/deail/detail.js
+// pages/index/team/information/information.js
 Page({
 
   /**

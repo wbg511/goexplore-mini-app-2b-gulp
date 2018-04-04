@@ -1,0 +1,17 @@
+<!--pages/index/team/information/information.wxml-->
+<!-- 战队列表  -->
+<view class='myteam-list'>
+  <view class='myteam-item clearfloat'>
+    <view class='team-icon'>
+      <image src='http://p3ga3r6fb.bkt.clouddn.com/img/map-huodongliebiao-icon@3x.png'></image>
+    </view>
+
+    <view class='team-name information'>
+      <text class='name'>寥寥</text>
+      <text class='sex'>女</text>
+      <text class='tel'>18510454067</text>
+    </view>
+    <view class='team-num'>设为队长</view>
+    <view class=''></view>
+  </view>
+</view>

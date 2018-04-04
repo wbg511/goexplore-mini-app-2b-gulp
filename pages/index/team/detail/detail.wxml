@@ -28,40 +28,52 @@
   </view>
   <!-- 成员列表  -->
   <view class='meber-list'>
-    <view class='item'>
-      <view class='meber-img'>
-        <image></image>
-      </view>
-      <view>一见清心</view>
+    <!-- 成员详情  -->
+    <view class='meber-list-content'>
+      <view class='item'>
+        <view class='meber-img'>
+          <image></image>
+        </view>
+        <view>一见清心</view>
 
-    </view>
-    <view class='item'>
-      <view class='meber-img'>
-        <image></image>
       </view>
-      <view>一见清心</view>
+      <view class='item'>
+        <view class='meber-img'>
+          <image></image>
+        </view>
+        <view>一见清心</view>
 
-    </view>
-    <view class='item'>
-      <view class='meber-img'>
-        <image></image>
       </view>
-      <view>一见清心</view>
+      <view class='item'>
+        <view class='meber-img'>
+          <image></image>
+        </view>
+        <view>一见清心</view>
 
-    </view>
-    <view class='item'>
-      <view class='meber-img'>
-        <image></image>
       </view>
-      <view>一见清心</view>
+      <view class='item'>
+        <view class='meber-img'>
+          <image></image>
+        </view>
+        <view>一见清心</view>
 
-    </view>
-    <view class='item'>
-      <view class='meber-img'>
-        <image></image>
       </view>
-      <view>一见清心</view>
+      <view class='item'>
+        <view class='meber-img'>
+          <image></image>
+        </view>
+        <view>一见清心</view>
 
+      </view>
     </view>
+    <!-- 二维码  -->
+    <view class='card'></view>
+    
   </view>
+
 </view>
+
+<!-- 加入战队  -->
+    <view class='add-team'>
+      加入战队
+    </view>

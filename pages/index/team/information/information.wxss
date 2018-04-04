@@ -1,0 +1,34 @@
+/* pages/index/team/information/information.wxss */
+
+.myteam-list,.search-team{
+  height: 120rpx;
+  padding: 10rpx 40rpx;
+  width: 120%;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.myteam-item,.search-content{
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  
+}
+.search-content{
+  border-bottom: 1rpx solid #04989e;
+}
+.myteam-item view{
+  float: left;
+}
+.team-name{
+  margin-left: 40rpx;
+}
+.team-icon{
+  width: 100rpx;
+  height: 100rpx;
+}
+.team-num{
+  margin-left: 40rpx;
+}
+.information text{
+ margin-left: 20rpx;
+}
